@@ -20,16 +20,20 @@
     </article>
 
     <script id="comment-template" type="text/x-lodash-template">
-    <div class="comment">
-      <div class="comment-body"><%- comment %></div>
-      <div class="commenter">
-        <p>
-          <span class="posted-by">Posted By: </span>
-          <%- commenter %>
-        </p>
+      <div class="comment">
+        <div class="comment-body"><%- comment %></div>
+        <div class="commenter">
+          <p>
+            <span class="posted-by">Posted By: </span>
+            <% if(commenter !== '') { %>
+              <%= commenter %>
+            <% } else { %>
+              Anonymous
+            <% } %>
+          </p>
+        </div>
       </div>
-    </div>
-  </script>
+    </script>
 
 
     <script src="lodash.min.js"></script>
